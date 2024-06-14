@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <lightning-input label="Num of Accounts" onchange={numHandler}>
+        </lightning-input>
+        <lightning-button label="Fetch" variant="brand" onclick={Handle}></lightning-button>
+            <template for:each={accounts} for:item="account">
+                <div key={account.Id} class="slds-p-around_medium lgc-bg">
+                    <lightning-tile label={account.Name} type="media">
+                        <lightning-icon slot="media" icon-name="standard:groups"></lightning-icon>
+                        <p class="slds-truncate" title={account.Name}>{account.Name}</p>
+                        <p class="slds-truncate" title={account.Phone}>{account.Phone}</p>
+                    </lightning-tile>
+                </div>
+        </template>
+    </lightning-card>
+</template>
